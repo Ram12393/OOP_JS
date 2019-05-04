@@ -275,3 +275,42 @@ target.lips = 'pink'
 
 // }
 console.log(`her lips are ${Girl.lips}`);
+
+class Student{
+    constructor(name,branch){
+        this.name = name;
+        this.branch = branch;
+    }
+    displayStudentDetails(){
+        console.log(`student name is ${this.name} and he is studying ${this.branch}`);
+    }
+    displayStudentName(){
+        return this.name
+    }
+}
+
+class Parent extends Student{
+    constructor(p_name,mobile,name,branch){
+        super(name,branch);
+        this.p_name = p_name;
+        this.mobile= mobile;
+    }
+    displayParentChild(){
+        console.log(`parent name is ${this.p_name} and their child is ${super.displayStudentName()}`);
+    }
+}
+
+Student.prototype.marks =function(m1){
+    console.log(`student ${this.name} got ${m1} marks `);
+}
+const parent = new Parent('Krishnamurthy', '9553438342','ram','MCA');
+parent.displayParentChild();
+parent.displayStudentDetails()
+parent.marks(25)
+
+
+
+
+
+
+
